@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro de Entregador</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/portal.css')}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container" style="max-width: 800px;"> <!-- Aumentei o tamanho do container -->
+        <div class="content first-content">
+            <div class="first-column">
+                <h2 class="title title-primary">Cadastre seu entregador!</h2>
+                <p class="description description-primary">Adicione as informações ao lado.</p>
+            </div>
+            <div class="second-column">
+                <h2 class="title title-second">Cadastro de Entregador</h2>
+                <p class="description description-second">Preencha os dados do entregador.</p>
+                <form class="form">
+                    <!-- Campo Nome -->
+                    <label class="label-input" for="nome">
+                        <input type="text" id="nome" placeholder="Nome Completo">
+                    </label>
+
+                    <!-- Campo Email -->
+                    <label class="label-input" for="email">
+                        <input type="email" id="email" placeholder="Email">
+                    </label>
+
+                    <!-- Campo Código -->
+                    <label class="label-input" for="codigo">
+                        <input type="text" id="codigo" placeholder="Código do Entregador">
+                    </label>
+
+                    <!-- Campo Modalidade -->
+                    <label class="label-input" for="modalidade">
+                        <input type="text" id="modalidade" placeholder="Modalidade de Trabalho">
+                    </label>
+
+                    <!-- Campo Unidade -->
+                    <label class="label-input" for="unidade">
+                        <input type="text" id="unidade" placeholder="Unidade">
+                    </label>
+
+                    <!-- Campo Relação de Contrato -->
+                    <label class="label-input" for="relacao">
+                        <input type="text" id="relacao" placeholder="Relação de Contrato">
+                    </label>
+
+                    <!-- Campo Telefone -->
+                    <label class="label-input" for="telefone">
+                        <input type="tel" id="telefone" placeholder="Telefone">
+                    </label>
+
+                    <!-- Botão de Cadastro -->
+                    <button class="btn btn-second" type="submit">Cadastro</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

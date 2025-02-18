@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Entregadores</title>
+    <style>
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('imagens/menu.jpeg'); /* Caminho da imagem de fundo */
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            margin: 0;
+            padding: 0;
+            height: 100vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        
+        .container {
+            text-align: center;
+            max-width: 800px; 
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); 
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+        }
+
+        h1 {
+            color: #000000; 
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 16px;
+            margin-top: 20px;
+            color: #000000; 
+        }
+
+        
+        nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #b41313; 
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+
+        nav a {
+            color: rgb(255, 255, 255);
+            padding: 14px 40px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px 0;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            max-width: 300px; 
+        }
+
+        nav a:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            nav {
+                width: 100%;
+                padding: 10px;
+            }
+
+            nav a {
+                font-size: 16px;
+                padding: 12px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bem-vindo ao Portal de Entregadores</h1>
+
+        <nav>
+            <a href="/cadastro">Cadastrar Entregador</a>
+            <a href="/consulta">Checar base de entregadores</a>
+        </nav>
+
+        <p class="description">
+            Utilize o menu acima para acessar as opções disponíveis:
+            <br>
+            - <strong>Cadastrar Entregador</strong>: Cadastro de novos entregadores a base.
+            <br>
+            - <strong>Checar base de entregadores</strong>: Consultar informações dos entregadores cadastrados.
+        </p>
+    </div>
+
+</body>
+</html>

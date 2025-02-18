@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Entregador - Acesso por Código</title>
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+<style>
+    body {
+    background-image: url("{{url_for('static',filename='imagens/menu.jpeg')}}");
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+} 
+</style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Portal Entregadores</h1>
+
+        <!-- Formulário para buscar entregador -->
+        <form class="search-form">
+            <label for="codigo">Código do Entregador:</label>
+            <input type="text" id="codigo" placeholder="Digite o código do entregador" aria-label="Código do Entregador">
+            <button type="button" onclick="buscarFicha()">Buscar</button>
+        </form>
+
+        <!-- Área para exibir informações do entregador -->
+        <div id="ficha" class="card" style="display: none;">
+            <h2>Informações do Entregador</h2>
+            <table>
+                <tr>
+                    <th>Nome Completo</th>
+                    <td id="nome"></td>
+                </tr>
+                <tr>
+                    <th>Unidade</th>
+                    <td id="unidade"></td>
+                </tr>
+                <tr>
+                    <th>Modalidade</th>
+                    <td id="modalidade"></td>
+                </tr>
+                <tr>
+                    <th>Relação de Contrato</th>
+                    <td id="contrato"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function buscarFicha() {
+            const codigo = document.getElementById('codigo').value.trim();
+
+            if (codigo === '') {
+                alert('Por favor, insira o código do entregador.');
+                return;
+            }
+
+            // Realizando a requisição para o Flask (backend)
+            fetch(`http://127.0.0.1:5000/api/busca_ficha?codigo=${codigo}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.erro) {
+                        alert(data.erro);
+                    } else {
+                        // Atualiza as informações com os dados retornados
+                        document.getElementById('nome').innerText = data.nome;
+                        document.getElementById('unidade').innerText = data.unidade;
+                        document.getElementById('modalidade').innerText = data.modalidade;
+                        document.getElementById('contrato').innerText = data.relacao;
+
+                        // Exibindo a ficha
+                        document.getElementById('ficha').style.display = 'block';
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    alert('Ocorreu um erro ao buscar as informações.');
+                });
+        }
+    </script>
+
+</body>
+</html>
